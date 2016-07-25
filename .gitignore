@@ -1,0 +1,8 @@
+# IntelliJ project files
+.idea
+*.iml
+.gitignore
+.idea/
+hibernate.iml
+pom.xml
+target/
