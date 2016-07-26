@@ -106,6 +106,7 @@ public class HibernateLifeTestCase {
         User user = (User) session.get(User.class,4);
         user.setPassword("164839");
         session.flush();
+        System.out.println(user);
         session.getTransaction().commit();
     }
 }
