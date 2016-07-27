@@ -15,9 +15,9 @@ public class OneToOneTest {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         Person person = new Person();
-        person.setName("aa");
+        person.setName("AA");
         Card card = new Card();
-        card.setCardname("cc");
+        card.setCardname("CC");
         card.setPerson(person);
         session.save(person);
         session.save(card);
@@ -36,7 +36,7 @@ public class OneToOneTest {
     public void testFindCard(){
         Session session  = HibernateUtil.getSession();
         session.beginTransaction();
-        Card card = (Card) session.get(Card.class,10);
+        Card card = (Card) session.get(Card.class,11);
         System.out.println(card.getCardname());
         System.out.println(card.getPerson().getName());
         session.getTransaction().commit();

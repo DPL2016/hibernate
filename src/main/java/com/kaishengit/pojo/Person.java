@@ -1,14 +1,21 @@
 package com.kaishengit.pojo;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by D on 2016/7/26.
  */
+@Entity
+@Table(name = "t_person")
 public class Person implements Serializable{
     private static final long serialVersionUID = -1126022037726514305L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @OneToOne
+    @PrimaryKeyJoinColumn
     private Card card;
 
     @Override

@@ -15,11 +15,11 @@ public class OneToOne2TestCase {
         Topic topic = new Topic();
         topic.setTitle("Hello");
         TopicContent topicContent = new TopicContent();
-        topicContent.setContent("Hello,124r54t4");
+        topicContent.setContent("OneToOne");
         topic.setTopicContent(topicContent);
-        session.save(topic);
-        session.save(topicContent);
 
+        session.save(topicContent);
+        session.save(topic);
         session.getTransaction().commit();
     }
 

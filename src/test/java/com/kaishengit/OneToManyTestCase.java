@@ -35,7 +35,7 @@ public class OneToManyTestCase {
     public void testFindDept(){
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Dept dept = (Dept) session.get(Dept.class,15);
+        Dept dept = (Dept) session.get(Dept.class,16);
         System.out.println(dept.getDeptname());
         Set<Employee> employeeSet = dept.getEmployeeSet();
         for (Employee employee:employeeSet){
@@ -48,7 +48,7 @@ public class OneToManyTestCase {
     public void testFindEmployee(){
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Employee employee = (Employee) session.get(Employee.class,29);
+        Employee employee = (Employee) session.get(Employee.class,31);
         System.out.println(employee.getEmpname());
         Dept dept = employee.getDept();
         System.out.println(dept.getDeptname());

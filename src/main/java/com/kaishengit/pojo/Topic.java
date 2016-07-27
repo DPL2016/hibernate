@@ -1,12 +1,19 @@
 package com.kaishengit.pojo;
 
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "t_topic")
 public class Topic implements Serializable{
     private static final long serialVersionUID = -3446732322759664054L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "contentid",unique = true)
     private TopicContent topicContent;
 
     public Integer getId() {
